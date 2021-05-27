@@ -7,7 +7,7 @@
     $rooms=[];
 
     if ($result && $result->num_rows > 0) {
-        // output data of each row
+        
         while($row = $result->fetch_assoc()) {
             
             $rooms[] = $row;            
@@ -37,7 +37,7 @@
             
             <li>
                 <div>Numero stanza: <?php echo $room['room_number']?></div>
-                <a href="">Info stanze</a>           
+                <a href="info-stanze.php?id=<?php echo $room['id'] ?>">Info stanze</a>           
             </li>
         <?php } ?>
     </ul>
