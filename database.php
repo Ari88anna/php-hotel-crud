@@ -7,7 +7,7 @@
     $dbname = "dbhotel";
 
     // Connect
-    $conn = new mysqli($servername, $port, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
     // Check connection
     if ($conn && $conn->connect_error) {
