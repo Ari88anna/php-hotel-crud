@@ -1,22 +1,16 @@
 <?php
+    require_once __DIR__ . '/database.php';
 
-    $servername = "localhost: 8889";
-    $username = "root";
-    $password = "root";
-    $dbname = "dbhotel";
+    $sql = "SELECT *, `floor` FROM `stanze`;";
+    $result = $conn->query($sql);
 
-    // Connect
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn && $conn->connect_error) {
-
-        echo "Connection failed: " . $conn->connect_error;
-    
-    } else {
-        echo "Connected!";
-    }
-
- 
-    
+    if ($result && $result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            var_dump($row)
+        //echo "Stanza N. ". $row['room_number']. " piano: ".$row['floor'];
+        }
+        
+    } 
+       
 ?>
